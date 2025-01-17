@@ -1,7 +1,7 @@
 ### Introduction to AI
 #### Assignment 1 : Getting started
 
-##### Due: Friday Sept 4, 11:59pm.
+##### Due: Friday Feb 7, 11:59pm.
 
 ##### 100 points.
 
@@ -11,7 +11,7 @@ To turn in: please submit everything to your github repo. For the written portio
 
 
 ##### Question 1: Environments. (10 points - 2 points each)
-*(milestone Wed Aug 28)*
+*(milestone Feb 5)*
 
 a) What does it mean for an environment to be stochastic? The self-driving car is an example of a stochastic environment; why is this?
 
@@ -25,7 +25,7 @@ e) What does it mean for an environment to be multiagent? Card games such as pok
 
 ##### Question 2: Approach. (20 points)
 
-*(milestone: Monday Aug 26)* 
+*(milestone: Jan 27)* 
 
 A common technique for estimation of complex problems is Monte Carlo simulation. It's also our first exposure to <i> generative</i> algorithms, which are algorithms that
 can generate novel data from a distribution. We'll use it here to try to estimate 
@@ -76,9 +76,18 @@ A round of the game works like this:
 Please note that there are a few edge cases in here. (What if they tie? What if they both tie at the target?) You may choose 
 how to implement this; just be consistent in your results.
          
- 
+ #### Question 5 (20 points) Perceptrons.
+*(milestone Feb 5)*
+
+In this problem, you'll implement your first actual machine learning algorithm, the perceptron algorithm.
+Using the material presented in class, complete the implementation in perceptron.py.
+
+Your algorithm should process each element of the training data and then update the weights appropriately.
+It can stop when all elements of the training data are correctly classified.
+
+
 ##### Question 3. (20 points) Machine Learning preparation
-*(milestone Aug 30)*
+*(milestone Jan 29)*
 
 In this question, we'll start building the tools and knowledge that we'll need to do *machine learning.* 
 For this assignment, we'll start with a toy dataset; the tennis dataset. You'll see this a few more times throughout the semester. It's small and boring, but easy to work with.
@@ -97,7 +106,7 @@ It's a useful benchmark for lower bounds. If our new learning algorithm cannot p
 I've provided a skeleton; you fill in the ZeroR and RandR functions and then run them on the tennis dataset to compute <i>accuracy</i>, which is the fraction of instances in the dataset that are correctly classified.
 
 ##### Question 4 (20 points): Word frequencies. 
-*(milestone: Sept 1)*
+*(milestone: Jan 31)*
 
 One of the primary domains we'll  work with this semester is text. The most common approach to dealing with
   large bodies of text is statistical. This involves converting a document into a *vector*. This requires counting the number of words in a document.
@@ -121,58 +130,9 @@ that is text, regardless of extension. You can skip over non-text files. I would
 look at the re module to see how to use a regular expression to do this.)
    
 
-#### Question 5. (20 points) Ollama
-*(milestone: sept 3)*
-
-In this question, you'll get some initial experience working with a Large Language Model. We'll be using [ollama](https://ollama.com/), which provides both a command-line
-interface and a Python API for your favorite LLM. 
-
-- To begin, get Ollama installed on your computer. The GitHub repo is [here](https://github.com/ollama/ollama). 
-There are lots of ways to do it - you can download the installer, or use a Docker container if you prefer. The goal is to be ale to do this:
-(If your computer doesn't have enough RAM, ssh into one of the lab computers, or use the CS Virtual Lab. (you should have learned about this in
-CS221; if you don't know about it, please ask!)
-
-This is a great example of a place where it's great to work together and help each other. If you're having problems, please post them on Piazza! 
-
-- Next, create a Modelfile that contains your own custom system prompt. (add this to your repo.) 
-
-- Next, install the Ollama Python library (with pip install ollama).
-
-- Last, let's see if we can set up a simple Ollama server. This will listen on a socket for a request, call the LLM, a nd return a reply.
-You can find the Ollama-python docs[here](https://github.com/ollama/ollama-python).
-
-Start by creating a server, like so:
-
-    import ollama
-    response = ollama.chat(model='llama3.1', messages=[
-    {
-        'role': 'user',
-        'content': 'Why is the sky blue?',
-    },
-    ])
-    print(response['message']['content'])
-
-You can then call it from the command line like this:
-
-    curl http://localhost:11434/api/generate -d '{
-    "model": "llama3",
-    "prompt": "Why is the sky blue?"
-    }'
-
-You should see a whole bunch of responses, one for each token generated, like so:
-
-    {"model":"llama3","created_at":"2024-08-20T21:20:24.919781Z","response":"The","done":false}
-    {"model":"llama3","created_at":"2024-08-20T21:20:24.952087Z","response":" sky","done":false}
-    {"model":"llama3","created_at":"2024-08-20T21:20:24.984478Z","response":" appears","done":false}
-
-Please include a Python file with the code for your Ollama server in your repo.
-
-Congratulations! You've learned how to deal with Python packages, gotten a server installed, and learned a little
-about LLM configuration! We'll delve more into this later in the semester.
-
 ##### Question 6 (10 points): Detecting Intelligence. 
 
-*(milestone: Sept 4)*
+*(milestone: Feb 7)*
 
 Large Language Models, or LLMs, have had a massive impact both on the field of AI and on culture more broadly since their introduction a few years ago.
 
@@ -191,17 +151,3 @@ Now pick one of the LLMs and craft a prompt in which you give it the original qu
 
  Include a copy of your prompt and the LLM's reply. 
 
-##### Question 7: (Grad Students only):  
-
-A classic thought experiment in response to the Turing Test is the Chinese Room, proposed by John Searle.
-To begin, please read [this webpage](https://mind.ilstu.edu/curriculum/searle_chinese_room/searle_chinese_room.html), which presents the Chinese Room thought experiment, intended to show that a computer can manipulate symbols to produce replies without understanding what they mean.
-
-Then, read section 2 (Replies and Rejoinders) of [this page](https://iep.utm.edu/chineser/), which summarizes many of the responses to the Chinese Room argument.
-
-a) Summarize the Chinese Room argument.
-
-b) What does this have to do with computers? 
-
-c) Why does Searle believe that it shows that a computer can pass the Turing test without understanding?
-
-d) Do you find Searle's argument convincing? Or do you find one of the responses more appealing? Explain your position. 

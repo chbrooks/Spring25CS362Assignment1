@@ -77,15 +77,6 @@ A round of the game works like this:
 Please note that there are a few edge cases in here. (What if they tie? What if they both tie at the target?) You may choose 
 how to implement this; just be consistent in your results.
          
- #### Question 5 (20 points) Perceptrons.
-*(milestone Feb 5)*
-
-In this problem, you'll implement your first actual machine learning algorithm, the perceptron algorithm.
-Using the material presented in class, complete the implementation in perceptron.py.
-
-Your algorithm should process each element of the training data and then update the weights appropriately.
-It can stop when all elements of the training data are correctly classified.
-
 
 ##### Question 3. (20 points) Machine Learning preparation
 *(milestone Jan 29)*
